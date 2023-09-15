@@ -13,15 +13,43 @@ class ViewController: UIViewController {
     var secondString = "The background will turn green"
     var thirdString = "cool"
     
+//contstant varibles
+    let firstTemp = 13
+    let secondTemp = 12
+
+//IBOutlets
     @IBOutlet weak var firstLabel: UILabel!
     
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    @IBOutlet weak var thirdLabel: UILabel!
+
+//IBActions
+    @IBAction func textChange(_ sender: Any) {
+        if firstString == "The background color will turn blue" {
+            self.secondLabel.text = "This is true"
+        }
+        else {
+            self.thirdLabel.text = "This is false"
+        }
+    }
+    
+    @IBAction func additionButton(_ sender: Any) {
+        if firstTemp == secondTemp {
+            print("the code in this block will not execute")
+        }
+        else {
+            self.view.backgroundColor = UIColor.green
+            let thirdTemp = firstTemp + secondTemp
+            print(thirdTemp)
+        }
+    }
+   
     @IBAction func changeColorButtonPressed(_ sender: Any) {
-        if firstString == "The background color is red"
-        {
+        if firstString == "The background color is red" {
             self.view.backgroundColor = UIColor.red
         }
-        else
-        {
+        else {
             self.view.backgroundColor = UIColor.blue
             self.firstLabel.textColor = UIColor.black
             self.firstLabel.text = "this is \(thirdString)"
